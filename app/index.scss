@@ -1,8 +1,79 @@
+@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css';
+@import 'https://fonts.googleapis.com/css?family=Open+Sans|Raleway';
+
+// Color Palette
+$dark-gray: #24221F;
+$dark-blue: #363F45;
+$blue: #4B5F6D;
+$light-blue: #5E7C88;
+$gold: #FEB41C;
+
+// Breakpoints
+$break-small: 720px;
+$break-large: 1280px;
+
+// Global styles
 html, body {
   height: 100%;
 }
 
 body {
-    font-family: Arial;
+    font-family: 'Raleway';
     margin: 0;
+    overflow: auto;
 }
+
+.container {
+    max-width: 1280px;
+    width: 100%;
+}
+
+.jumbotron {
+    background-color: $dark-blue;
+    color: white;
+    display: flex;
+
+    justify-content: center;
+
+    padding: 12rem 0;
+
+    @media screen and (max-width: $break-small) {
+        padding: 4rem 0 ;
+    }
+
+    .centered {
+        text-align: center;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 2rem;
+    }
+
+    h1, h2, h3 {
+        margin: 0;
+    }
+
+    h1 {
+        font-size: 3.6rem;
+
+        @media screen and (max-width: $break-small) {
+            font-size: 2.4rem;
+        }
+    }
+
+    h3 {
+        font-size: 1.2rem;
+
+        @media screen and (max-width: $break-small) {
+            font-size: .8rem;
+        }
+    }
+}
+
+// Shared component styles
+@import "app/shared/navbar-cmpt/style";
+
+// Pages
+@import "app/pages/style";
